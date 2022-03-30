@@ -1,0 +1,20 @@
+{
+    "LocalDependencies": [],
+    "LuaDependencies": [
+        "custom.hub.transform.CustomerTransform",
+        "date.parse",
+        "llp",
+        "retry",
+        "stream"
+    ],
+    "OtherDependencies": [
+        "OutBound.vmd",
+        "ack.vmd"
+    ],
+    "timestamp": "1648225500",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}

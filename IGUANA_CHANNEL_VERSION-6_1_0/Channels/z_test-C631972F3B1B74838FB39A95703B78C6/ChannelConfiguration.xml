@@ -1,0 +1,26 @@
+<channel
+   name="z test"
+   guid="C631972F3B1B74838FB39A95703B78C6"
+   description=""
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="false">
+   <to_mapper
+      guid="z_test-To-ot66M8IkoL8GYX"
+      commit_id="c08c50f04bc1c252447d2d571ee35f8e69bdacd7"
+      commit_comment="try this?">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="B2ED257DCA6BFADA300E8BA613E869AB"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_llp_listener
+      original_vmd_path="C:/Users/obner/Documents/Test/Iguana_6_1_4/autoack.vmd"
+      ack_vmd_path="C:/Users/obner/Documents/Test/Iguana_6_1_4/autoack.vmd"
+      port="5348"
+      connection_timeout="30"
+      unlimited_connection_timeout="false"
+      keep_vmd_updated="false"
+      ack_style="fast"/>
+</channel>
