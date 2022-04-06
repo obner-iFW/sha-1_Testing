@@ -1,0 +1,32 @@
+<channel
+   name="04-Test Data Generator"
+   guid="54694571EEE004DCA189009958D97FAA"
+   description="This channel generates random HL7 ADT messages and then writes them to disk.      &#xD;&#xA;&#xD;&#xA;The Source component generates a new HL7 ADT message every 10 seconds.&#xD;&#xA;&#xD;&#xA;The Filter component is not in use.&#xD;&#xA;&#xD;&#xA;The destination component writes the generated messages to the /Demo/Messages folder.&#xD;&#xA;&#xD;&#xA;More information: http://wiki.interfaceware.com/1372.html"
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="false">
+   <to_file
+      output_dir="Demo/Messages/"
+      write_to_separate_file="true"
+      output_single_filename=""
+      use_prepended_info_as_filename="false"
+      output_file_id_type="0"
+      output_filename_mask="%i.txt"
+      temp_file_extension="tmp"
+      count_of_padding_digit="5"
+      ftp_password="Ef4kQioy9dupL8KqHx8JaA=="
+      sftp_authentication_method="user_password"
+      use_ftp="false">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="B0702340295532FA3C6334B6E73F491A"/>
+      </dequeue_list>
+   </to_file>
+   <from_mapper
+      guid="35CDB58FE1C98A08005D95BBAB9DABB2"
+      commit_id="a64e4387464e85b6473f4059d4f5a0bc343ec64e"
+      commit_comment="Import Translators: importing"
+      poll_time="10000">
+   </from_mapper>
+</channel>

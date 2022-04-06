@@ -1,0 +1,40 @@
+<channel
+   name="02-Socket to Database"
+   guid="49401A9E5EE7E47BDB0EC77942551EDA"
+   description="This channel is an LLP listener that accepts incoming HL7 messages and then stores some of the information to a database.&#xD;&#xA;&#xD;&#xA;The Source component listens for messages on port 5145. &#xD;&#xA;&#xD;&#xA;The Filter component filters out any message that is not an HL7 ADT message.&#xD;&#xA;&#xD;&#xA;The Destination component inserts some of the fields from the message into a SQLite database.&#xD;&#xA;&#xD;&#xA;More information: http://wiki.interfaceware.com/1370.html"
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="true">
+   <to_mapper
+      guid="F48BD689AF3DF64C896247663215D0AE"
+      commit_id="a64e4387464e85b6473f4059d4f5a0bc343ec64e"
+      commit_comment="Import Translators: importing">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="9DDF709B1F7E0D369A8215186AAC1514"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_llp_listener
+      original_vmd_path="C:/Users/obner/Documents/Test/Iguana_6_1_4/autoack.vmd"
+      ack_vmd_path="C:/Users/obner/Documents/Test/Iguana_6_1_4/autoack.vmd"
+      port="5145"
+      connection_timeout="1"
+      unlimited_connection_timeout="true"
+      keep_vmd_updated="false"
+      ack_style="fast"/>
+   <message_filter
+      filter_after_logging="true"
+      log_pre_post_filter_message="true"
+      keep_vmd_updated="false"
+      original_vmd_path=""
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true"
+      translator_guid="3EBD411EC0CC8FF51BB17AD1F3B7D1CA"
+      translator_commit_id="a64e4387464e85b6473f4059d4f5a0bc343ec64e"
+      translator_commit_comment="Import Translators: importing">
+   </message_filter>
+</channel>

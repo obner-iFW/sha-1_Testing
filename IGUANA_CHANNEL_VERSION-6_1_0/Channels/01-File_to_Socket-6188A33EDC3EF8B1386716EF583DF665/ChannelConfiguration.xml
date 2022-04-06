@@ -1,0 +1,69 @@
+<channel
+   name="01-File to Socket"
+   guid="6188A33EDC3EF8B1386716EF583DF665"
+   description="This channel reads in HL7 messages and then sends them out over a TCP/IP socket using the LLP protocol.&#xD;&#xA;&#xD;&#xA;The Source component monitors the directory /Demo/Messages/ for new text files.&#xD;&#xA;&#xD;&#xA;The Filter component transforms some of the data for the outgoing messages.&#xD;&#xA;&#xD;&#xA;The Destination component send the messages out over LLP on port 5145.&#xD;&#xA;&#xD;&#xA;More information: http://wiki.interfaceware.com/1369.html"
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="true">
+   <to_llp_client
+      remote_host="localhost"
+      remote_port="5145"
+      wait_for_ack="true"
+      ack_timeout="10000"
+      ack_verification_type="0"
+      ack_vmd_path="${iguana_dir}/ack_verify.vmd"
+      original_vmd_path=""
+      keep_vmd_updated="false"
+      retry_on_ack_timeout="true"
+      retry_on_ack_verification_failed="false"
+      unlimited_count_of_retry="false"
+      count_of_retry="5"
+      disconnect_between_retries="true"
+      ack_reconnect_interval="10000"
+      ack_error_handling="1"
+      persistent_connection="true"
+      connection_timeout="10000"
+      unlimited_max_count_of_reconnect="false"
+      max_count_of_reconnect="60"
+      connection_lost_reconnect_interval="10000">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="CE82B62C09F28DFF618A425377CD2FF5"/>
+      </dequeue_list>
+   </to_llp_client>
+   <from_file
+      file_type="HL7"
+      prepend_file_info="false"
+      eof_char=""
+      poll_time="10000"
+      max_message_size="15728640"
+      source_dir="Demo/Messages/"
+      source_file_extension="txt"
+      archive_processed_files="false"
+      processed_dir=""
+      error_dir=""
+      ignored_segments=""
+      segment_delimiter="0x0D"
+      message_delimiter="0x0A"
+      minimum_file_age="0"
+      escape_8bit="false"
+      escape_char=" "
+      ftp_password="Ef4kQioy9dupL8KqHx8JaA=="
+      sftp_authentication_method="user_password"
+      use_ftp="false"/>
+   <message_filter
+      filter_after_logging="true"
+      log_pre_post_filter_message="true"
+      keep_vmd_updated="false"
+      original_vmd_path=""
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true"
+      translator_guid="AE9DD90276B2A5DBD619614E86765429"
+      translator_commit_id="a64e4387464e85b6473f4059d4f5a0bc343ec64e"
+      translator_commit_comment="Import Translators: importing">
+   </message_filter>
+</channel>

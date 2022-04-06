@@ -1,0 +1,14 @@
+{
+    "LocalDependencies": [],
+    "LuaDependencies": [],
+    "OtherDependencies": [
+        "example/demo.vmd",
+        "tables.vmd"
+    ],
+    "timestamp": "1648573597",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}
